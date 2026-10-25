@@ -74,6 +74,8 @@
                 <version>${maven.compiler.plugin.version}</version>
                 <configuration>
                     <release>${java.version}</release>
+                    <!-- JDK 23+ 默认禁用隐式注解处理，必须显式开启，否则 Lombok/MapStruct 不生效 -->
+                    <proc>full</proc>
                     <annotationProcessorPaths>
                         <path>
                             <groupId>org.mapstruct</groupId>
